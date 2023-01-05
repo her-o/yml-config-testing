@@ -1,5 +1,5 @@
 #repo version 2.0.1
-name: Remote Testing for Ract 
+name: Remote Testing for React 
 
 on:
    push:
@@ -9,11 +9,10 @@ on:
 
 jobs:
   Test-Submit-React-Assessments:
-    if: github.repository != 'sabiocode/Starter.react-componentize'
     name: Run Super Duper React Tests
     runs-on: self-hosted
     steps:
-      run: echo npm @testing-library/react  
+      run: echo npm @testing-library/react version 
         
      
     
