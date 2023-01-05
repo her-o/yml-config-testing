@@ -1,0 +1,56 @@
+#repo version 2.0.1
+name: Remote Testing for Ract 
+
+on:
+#   push:
+#     branches:
+#       - "**"
+  workflow_dispatch:
+
+jobs:
+  Test-Submit-React-Assessments:
+    if: github.repository != 'sabiocode/Starter.react-componentize'
+    name: Run Super Duper React Tests
+    runs-on: self-hosted
+    steps:
+      - name: Setting Start Time
+        id: time
+        uses: nanzm/get-time-action@v1.1
+        with:
+          timeZone: 8
+          format: 'YYYY-MM-DDTHH:mm:ssZ'
+          
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: "14.x"
+
+      - name: Checkout Code
+        uses: actions/checkout@v2.3.4
+        continue-on-error: false
+        
+        
+      - name: Get Current Config
+        run: node C:\\sabio_modules\\sabia\\bin\\index.js get-config
+        continue-on-error: false
+
+      - name: Copy Admintests 2
+        run: node C:\\sabio_modules\\sabia\\bin\\index.js copy-admintests destination="${{github.workspace}}"
+        continue-on-error: false
+
+      - name: Yarn install
+        run: yarn install --prefer-offline --network-timeout 600000        
+        
+      - name: Compile Configured Tests
+        run: node C:\\sabio_modules\\sabia\\bin\\index.js compile-configured-test destination="${{github.workspace}}\"
+        continue-on-error: false
+
+      - name: Submit Tests to LISA
+        run: node C:\\sabio_modules\\sabia\\bin\\index.js send-lisa source="${{github.workspace}}\"
+        continue-on-error: false
+        
+#       - name: Send Results to User
+#         env:
+#           TIME: "${{ steps.time.outputs.time }}"
+#         run: node C:\\sabio_modules\\sabia\\bin\\index.js  send-results source="${{github.workspace}}\test-report\reportindex.html" timeStart="${{ steps.time.outputs.time }}"
+#         continue-on-error: false

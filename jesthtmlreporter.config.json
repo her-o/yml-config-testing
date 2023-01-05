@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Tests Passed/Failed",
+  "outputPath": "test-report/reportIndex.html",
+  "includeFailureMsg": true
+}
