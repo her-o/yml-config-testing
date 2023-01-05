@@ -12,7 +12,8 @@ jobs:
     name: Run Super Duper React Tests
     runs-on: self-hosted
     steps:
-      - name: Echoing version
+      - uses: actions/checkout@v3
+      - name: Echoing version 
         run: echo npm @testing-library/react version
         
      
