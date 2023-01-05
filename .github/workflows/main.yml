@@ -9,11 +9,11 @@ on:
 
 jobs:
   Test-Submit-React-Assessments:
-    if: github.repository != 'sabiocode/Starter.react-componentize'
     name: Run Super Duper React Tests
     runs-on: self-hosted
     steps:
-      run: echo npm @testing-library/react  
+      - name: Echoing version
+        run: echo npm @testing-library/react version
         
      
     
