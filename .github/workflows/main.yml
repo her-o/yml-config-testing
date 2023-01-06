@@ -12,7 +12,7 @@ on:
 jobs:
   Test-Submit-React-Assessments:
     name: Run Super Duper React Tests
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Echoing version
         run: echo npm @testing-library/react version
