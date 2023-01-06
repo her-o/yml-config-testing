@@ -14,8 +14,11 @@ jobs:
     name: Run Super Duper React Tests
     runs-on: ubuntu-latest
     steps:
-      - name: Echoing version
-        run: echo '$(npm show react version)'
+      - name: Echoing react version
+        run: echo "$(npm show react version)"
+
+      - name: Echoing react testing library version
+        run: echo "$(npm show @testing-library/react version)"
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
