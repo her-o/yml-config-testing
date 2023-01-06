@@ -16,5 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Echoing version
-        run: echo npm @testing-library/react version
-#
+        run: echo hello world
