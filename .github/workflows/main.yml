@@ -17,8 +17,7 @@ jobs:
       - name: Check react version
         #if: ${{ $(npm show react version) > 17 }}
         #uses: actions/github-script@v3
-        if: ${{ startsWith("$(npm show react version)", '18' )) }}
-        run: echo right version
+        run: echo ${{ startsWith("$(npm show react version)", '18' )) }}
         #with:
         #script: |
         #core.setFailed('Wrong react version')
