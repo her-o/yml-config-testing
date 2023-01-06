@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Check react version
         #if: ${{ $(npm show react version) > 17 }}
-        uses: actions/github-script@v3
+        #uses: actions/github-script@v3
         run: echo "$(npm show react version)"
         #with:
         #script: |
