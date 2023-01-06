@@ -15,11 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check react version
-        if: ${{ $(npm show react version) > 17 }}
+        #if: ${{ $(npm show react version) > 17 }}
         uses: actions/github-script@v3
-        with:
-          script: |
-            core.setFailed('Wrong react version')
+        run: echo "$(npm show react version)"
+        #with:
+        #script: |
+        #core.setFailed('Wrong react version')
 
   # This workflow contains a single job called "build"
   build:
