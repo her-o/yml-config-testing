@@ -13,9 +13,9 @@ jobs:
   Test-Submit-React-Assessments:
     name: Run Super Duper React Tests
     runs-on: ubuntu-latest
-
+    steps:
       - name: Check react version
-        if: ${{ "$(npm show react version)" > 17 }}
+        if: ${{ $(npm show react version) > 17 }}
         uses: actions/github-script@v3
         with:
           script: |
