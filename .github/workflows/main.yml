@@ -16,8 +16,7 @@ jobs:
     steps:
       - name: set react version output
         id: react_version
-        run: |
-          $reactVersion = "$(npm show react version)"
+        run: $reactVersion = "$(npm show react version)"
           Write-Output "::set-output name=reactVersion::$reactVersion"
 
       - name: Check react version
