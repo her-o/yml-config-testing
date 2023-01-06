@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echoing version
-        if: ${{"$(npm show react version)" >= 18}}
+        if: ${{'$(npm show react version)' >= 18}}
         run: echo More than 18
 
       - name: Echoing version 2
-        if: ${{"$(npm show react version)" < 18}}
+        if: ${{'$(npm show react version)' < 18}}
         run: echo Less than 18
   # This workflow contains a single job called "build"
   build:
