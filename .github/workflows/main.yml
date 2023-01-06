@@ -18,7 +18,7 @@ jobs:
         run: echo "$(npm show react version)"
 
       - name: Check react testing library
-        run: echo "$(npm show testing-library/react version)"
+        run: echo "$(npm show @testing-library/react version)"
 
   # This workflow contains a single job called "build"
   build:
