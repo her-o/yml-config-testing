@@ -1,12 +1,12 @@
 import React from "react";
-import {useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Product() {
-  const {productId} = useParams();
+  const { productId } = useParams();
   const navigate = useNavigate();
   const goToPage = (number) => {
     //console.log(e.currentTarget.dataset.page);
-    navigate(`/products/${number}`)
+    navigate(`/products/${number}`);
   };
 
   return (
@@ -35,7 +35,7 @@ function Product() {
                 <button
                   type="button"
                   className="btn btn-info"
-                  onClick={()=> goToPage(900)}
+                  onClick={() => goToPage(900)}
                   data-page="/products/900"
                 >
                   Go to Product 900
@@ -45,7 +45,7 @@ function Product() {
                 <button
                   type="button"
                   className="btn btn-primary"
-                  onClick={()=> goToPage(800)}
+                  onClick={() => goToPage(800)}
                   data-page="/products/800"
                 >
                   Go to Product 800
@@ -56,7 +56,7 @@ function Product() {
                 <button
                   type="button"
                   className="btn btn-success"
-                  onClick={()=> goToPage(100)}
+                  onClick={() => goToPage(100)}
                   data-page="/products/100"
                 >
                   Go to Product 100
