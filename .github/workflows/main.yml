@@ -21,10 +21,11 @@ jobs:
       - name: Check react testing library
         run: echo "$(npm show @testing-library/react version)"
 
-      - name: Yarn install
+      - name: Setting up node
         uses: actions/setup-node@v1
         with:
           node-version: "14"
+
       - run: yarn install
 
       - name: React Starter Tests
