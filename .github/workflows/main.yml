@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: "14"
       - run: yarn install
-      - run: yarn test:ci
+      - run: yarn test
 
   # This workflow contains a single job called "build"
   build:
