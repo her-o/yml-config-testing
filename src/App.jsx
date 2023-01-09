@@ -36,9 +36,7 @@ function App() {
     });
   };
 
-  const sayHello = () => {
-    console.log("Hello");
-  };
+  const sayHello = () => {};
 
   return (
     <div className="App">
