@@ -14,13 +14,13 @@ jobs:
     name: Run Super Duper React Tests
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Check react version
         run: echo "$(npm show react version)"
 
       - name: Check react testing library
         run: echo "$(npm show @testing-library/react version)"
 
-      - uses: actions/checkout@v2
       - name: Test using Node.js
         uses: actions/setup-node@v1
         with:
