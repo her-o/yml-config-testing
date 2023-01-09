@@ -21,13 +21,20 @@ jobs:
       - name: Check react testing library
         run: echo "$(npm show @testing-library/react version)"
 
-      - name: Test using Node.js
+      - name: React Starter Tests
         uses: actions/setup-node@v1
         with:
           node-version: "14"
       - run: |
           yarn install
-          yarn test
+          yarn test ./src/App.test.js
+          yarn test ./src/App-Part2.test.js
+          yarn test ./src/Disney.test.js
+          yarn test ./src/DisneyTask.test.js
+          yarn test ./src/GettingStarted.test.js
+          yarn test ./src/InternalClock.test.js
+          yarn test ./src/ReactClock.test.js
+          yarn test ./src/setState.test.js
 
       - name: Build app
         run: yarn build
