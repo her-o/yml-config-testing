@@ -28,6 +28,7 @@ jobs:
       - run: |
           yarn install
           yarn test
-          yarn build
 
+      - name: Build app
+        run: yarn build
 #
