@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Disney from "./examples/Disney";
-import * as carService from "./services/carService";
 import Fruits from "./examples/Fruits";
 import InternalClock from "./examples/InternalClock";
 import Functional from "./examples/Functional";
@@ -16,11 +15,6 @@ function App() {
       friends: [{ name: "Minnie" }, { name: "Donald" }, { name: "Pluto" }],
     },
   });
-
-  useEffect(() => {
-    carService.getPing();
-
-  }, []);
 
   const changeLastName = () => {
     setState((prevState) => {
@@ -63,25 +57,23 @@ function App() {
           <div className="col-6">
             <h5>Of class</h5>
             <div>
-            <OfClass/>
+              <OfClass />
             </div>
           </div>
           <div className="col-6">
             <h5>Functional</h5>
             <div>
-            <Functional/>
+              <Functional />
             </div>
           </div>
         </div>
-        <InternalClock/>
-
-       
-        <Fruits/>
+        <InternalClock />
+        <Fruits />
         <Disney friend={state.currentUser} showGreeting={sayHello} />
         <button className="btn" onClick={changeLastName}>
           Change last name
         </button>
-                <button onClick={removeFriends}>Remove All Friends</button>
+        <button onClick={removeFriends}>Remove All Friends</button>
       </header>
     </div>
   );
