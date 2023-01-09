@@ -6,7 +6,7 @@ name: Remote Testing for React
 # events but only for the master branch
 on:
   push:
-    branches: ["yml-edit3"]
+    branches: ["yml-edit2"]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
