@@ -1,0 +1,14 @@
+name: Testing second yml
+
+on:
+  push:
+    branches: ["yml-edit4"]
+
+jobs:
+  Test-Submit-React-Assessments:
+    name: 2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check react version
+        run: echo "$(npm show react version)"
