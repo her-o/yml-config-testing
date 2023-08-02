@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "Get Issue"
-      run: echo $ {{ github.event.pull_request }}
+      run: echo 'it works'
