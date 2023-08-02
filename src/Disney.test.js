@@ -21,7 +21,6 @@ describe("Disney - Passing State & Functions To Children", () => {
   it("Disney component exists and it renders without crashing", () => {});
 
   it("The friend prop is passed from App.jsx to Disney.jsx.", () => {
-
     const firstName = screen.getByText(mockUser.firstName);
     const lastName = screen.getByText(/mouse/i);
 
@@ -35,14 +34,14 @@ describe("Disney - Passing State & Functions To Children", () => {
     expect(countOfFriends).toBeTruthy();
   });
 
-  it("The WelcomeMessage component is rendered within the Disney component.", ()=> {
+  it("The WelcomeMessage component is rendered within the Disney component.", () => {
     // do props test
   });
 
-  it("The WelcomeMessage component accepts the prop 'end' with the value 'Goodbye'", ()=> {
+  it("The WelcomeMessage component accepts the prop 'end' with the value 'Goodbye'", () => {
     const end = screen.getByText(/goodbye/i);
     expect(end).toBeTruthy();
-  })
+  });
 
   it("Disney component receives function from parent component using props and invokes it", () => {
     expect(mockFn).toBeCalledTimes(1);
