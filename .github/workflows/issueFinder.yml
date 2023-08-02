@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "Get Issue"
-      run: echo 'it works'
+      run: echo ${{github.event}}
